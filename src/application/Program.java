@@ -22,7 +22,7 @@ public class Program {
 
 		// teste FindByDepartment
 		System.out.println("Teste: findByDepartment");
-		Department dep = new Department(3, null);
+		Department dep = new Department(2, null);
 		List<Seller> list = sellerDao.findByDepartment(dep);
 		for (Seller obj : list) {
 			System.out.println(obj);
@@ -41,9 +41,8 @@ public class Program {
 		
 		// teste insert
 		System.out.println("Teste: insert");
-		Seller newSeller = new Seller(null, "Amanda", "amanda@gmail.com", new Date(), 5000.0, dep);
+		Seller newSeller = new Seller(null, "Lais", "lais@gmail.com", new Date(), 4000.0, dep);
 		sellerDao.insert(newSeller);
-		System.out.println("Inserido: novo Id = " + newSeller.getId());
 		
 		System.out.println();
 		
@@ -53,6 +52,11 @@ public class Program {
 		seller.setName("Gabriel");
 		seller.setEmail("gabriel@gmail.com");
 		sellerDao.update(seller);
+		
+		// teste delete
+		System.out.println("Teste: delete");
+		seller = sellerDao.findById(8);
+		sellerDao.deleteById(seller);
 		
 	}
 }
