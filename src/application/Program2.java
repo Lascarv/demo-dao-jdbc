@@ -9,12 +9,29 @@ public class Program2 {
 	public static void main(String[] args) {
 		
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
-		
+		//Department dep = new Department();
 		
 		// teste inserir
-		System.out.println("Inserir novo departamento:");
+		System.out.println("Teste: inserir novo departamento");
 		Department newDepartment = new Department(null,"Food");
-		departmentDao.insert(newDepartment);
+	//	departmentDao.insert(newDepartment);
+		
+		System.out.println();
+		
+		// teste findById
+		System.out.println("Teste: findById");
+		Department dep = departmentDao.findById(2);
+		System.out.println(dep);
+		
+		System.out.println();
+		
+		// teste update
+		System.out.println("Teste: update");
+		dep = departmentDao.findById(2);
+		dep.setName("Eletronics");
+		departmentDao.update(dep);
+		
+		
 	}
 
 }
