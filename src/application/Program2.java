@@ -39,6 +39,10 @@ public class Program2 {
 		for( Department obj : list) {
 			System.out.println(obj);
 		}
+		
+		System.out.println("Teste delete");
+		dep = departmentDao.findById(2);
+		departmentDao.deleteById(dep);
 	}
 
 }
